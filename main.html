@@ -9,6 +9,32 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
+		
+  // Check if the array is empty or has only 1 element
+  if (arr.length <= 1) {
+    return -Infinity;
+  }
+
+  // Sort the array in descending order
+  arr.sort((a, b) => b - a);
+
+  // Find the second distinct element
+  let secondHighest = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) {
+      secondHighest = arr[i + 1];
+      break;
+    }
+  }
+
+  return secondHighest;
+}
+
+// Example usage:
+
+const result = secondHighest(arr);
+alert(result); // Output: 9
+
 			//Write your code here
 			
 		}
